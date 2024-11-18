@@ -6,7 +6,8 @@ def reverse_list(lst):
     :param lst: List of integers.
     :return: A list with elements in reverse order.
     """
-    pass  # Implement this
+    return lst[::-1]
+
 
 def count_occurrences(lst, element):
     """
@@ -15,7 +16,8 @@ def count_occurrences(lst, element):
     :param element: Element to count.
     :return: Integer count of occurrences.
     """
-    pass  # Implement this
+    return sum([item == element for item in lst])
+
 
 def get_keys_with_value(dct, value):
     """
@@ -24,7 +26,8 @@ def get_keys_with_value(dct, value):
     :param value: Value to find.
     :return: List of keys.
     """
-    pass  # Implement this
+    return [key for key, dict_value in dct.items() if dict_value == value]
+
 
 def merge_sorted_lists(lst1, lst2):
     """
@@ -33,7 +36,12 @@ def merge_sorted_lists(lst1, lst2):
     :param lst2: Second sorted list.
     :return: Merged sorted list.
     """
-    pass  # Implement this
+
+    merged = lst1 + lst2
+    merged.sort()
+
+    return merged
+
 
 def find_second_largest(numbers):
     """
@@ -41,7 +49,13 @@ def find_second_largest(numbers):
     :param numbers: List of integers.
     :return: The second largest integer.
     """
-    pass  # Implement this
+    
+    if len(list(set(numbers))) < 2:
+        return None
+    
+    numbers.sort()
+
+    return numbers[-2]
 
 def is_anagram(str1, str2):
     """
@@ -55,7 +69,12 @@ def is_anagram(str1, str2):
     :param str2: Second string.
     :return: True if the strings are anagrams, False otherwise.
     """
-    pass  # Implement this
+    
+    if all([chr in str2 for chr in str1]):
+        return True
+    else:
+        return False
+
 
 
 def flatten_list(nested_list):
@@ -64,7 +83,11 @@ def flatten_list(nested_list):
     :param nested_list: List of lists.
     :return: A flat list with all elements.
     """
-    pass  # Implement this
+    flat_list = []
+    for item in nested_list:
+        flat_list.extend(item)
+    
+    return flat_list
 
 
 def remove_duplicates(lst):
@@ -73,7 +96,11 @@ def remove_duplicates(lst):
     :param lst: List of elements.
     :return: List without duplicates.
     """
-    pass  # Implement this
+    unique = list(set(lst))
+    unique.sort()
+
+    return unique
+    
 
 def find_common_elements(lst1, lst2):
     """
@@ -82,4 +109,9 @@ def find_common_elements(lst1, lst2):
     :param lst2: Second list.
     :return: List of common elements.
     """
-    pass  # Implement this
+    
+    set_1 = set(lst1)
+    set_2 = set(lst2)
+    common_elemnets = set_1.intersection(set_2)
+    return list(common_elemnets)
+
